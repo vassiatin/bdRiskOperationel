@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+
+ {% block titlepage  %} 
+                              <p class="mb-0">Liste des departements</p> 
+   {% endblock  %}
+
+
+     {% block breadcrumb  %}
+         <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="javascript:void(0)">Parametre</a></li>
+         <li class="breadcrumb-item active"><a href="javascript:void(0)">Departement</a></li>
+         </ol>
+     {% endblock  %}
+
+
+
+{% block steelsheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/css/styles.css">
+    {#<link rel="stylesheet" href="/css/bootstrap2.min.css">#}
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/css/afbresponsive.css">
+    <link rel="stylesheet" href="/css/back.css">
+    <link rel="stylesheet" href="/css/choosen-css.css">
+    <link rel="stylesheet" href="/css/multi-select.css">
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+   <a href="{{ path('app_departement_new') }}">      
+ <button type="button" class="btn btn-rounded btn-info"><span
+   class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>
+     </span>Ajouter</button>
+        </a>
+      <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Liste des departements</h4>
+                            </div>
+      <div>
+     
+    </div>
+ <div class="card-body">
+    <div class="table-responsive">
+ {#    <table class="table table-bordered verticle-middle table-responsive-sm"> #}
+    <table id="example1" class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+               
+                <th>Code </th>
+                <th>Libelle </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for departement in departements %}
+            <tr>
+               
+                <td>{{ departement.codeDepartement }}</td>
+                <td>{{ departement.libelleDepartement }}</td>
+                <td>
+
+                
+
+ <a href="{{ path('app_departement_show', { 'id': departement.id })}}"  class="mr-2" data-toggle="tooltip"
+                                                            data-placement="top" title="Apercu"><i
+                                                                class="fa fa-eye color-danger"></i></a>||
+
+
+ <a href=""{{ path('app_departement_edit', { 'id': departement.id })}}"" class="mr-2" data-toggle="tooltip"
+                                                            data-placement="top" title="Modifier"><i
+                                                                class="fa fa-pencil" aria-hidden="true"></i></a>||
+
+
+ <a href="{{ path('app_departement_show', { 'id': departement.id })}}" class="mr-2" data-toggle="tooltip"
+                                                            data-placement="top" title="Supprimer"><i
+                                                                class="fa fa-close color-danger"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+   </div>
+{% endblock %}

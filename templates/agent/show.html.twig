@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block titlepage  %} 
+                              <p class="mb-0">Detail agent</p> 
+                              {% endblock  %}
+
+
+                              {% block breadcrumb  %}
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="javascript:void(0)">Parametre</a></li>
+                                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Agent</a></li>
+                                    </ol>
+                              {% endblock  %}
+
+{% block body %}
+  
+
+    <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Infos</h4>
+                            </div>
+      <div class="card-body">
+     <div class="table-responsive">
+    <table class="table table-bordered table-striped verticle-middle table-responsive-sm">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ agent.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ agent.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ agent.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Date Entree</th>
+                <td>{{ agent.dateEntree ? agent.dateEntree|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Departement</th>
+                <td>{{ agent.departem.libelleDepartement   }}</td>
+            </tr>
+        </tbody>
+  </table>
+    </div>
+    </div>
+    </div>
+
+<button class="btn btn-secondary"><span class="mr-3"><i
+       class="fa fa-bars"></i></span><a href="{{ path('app_agent_index') }}">
+   Liste</a></button></button>
+
+<button class="btn btn-primary mr-3"><span class="mr-3"><i
+    class="fa fa-pencil"></i></span> <a href="{{ path('app_agent_edit', {'id': agent.id}) }}">Modifier</a></button>
+   
+ 
+
+    {{ include('agent/_delete_form.html.twig') }}
+{% endblock %}

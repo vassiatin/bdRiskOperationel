@@ -1,0 +1,360 @@
+{#<div class="page__container invert">#}
+<meta>
+<style type="text/css" media="all">
+    /*nav ul:hover li:hover a:hover {*/
+    /*background-color: #0000F0;*/
+    /*}*/
+    ul:hover li:hover a:hover {
+        background-color: #090d66;
+        color: red;
+    }
+
+    #menu_gestioncourrier li:hover {
+        background-color: #005a7c;
+        color: red;
+    }
+
+    #menu_commandeChequier li:hover {
+        background-color: #005a7c;
+        color: red;
+    }
+
+    #menu_admin li:hover {
+        background-color: #005a7c;
+        color: red;
+    }
+
+    #menu_impression li:hover {
+        background-color: #005a7c;
+        color: red;
+    }
+
+    #menu_Extraction li:hover {
+        background-color: #005a7c;
+        color: red;
+    }
+</style>
+</meta>
+<nav class="horizontal-navigation">
+    <button class="btn btn-light btn--icon" data-action="horizontal-show"><span class="fa fa-bars"></span>
+        Toggle navigation
+    </button>
+   {#% set trouve=false %#}
+   {#% set liste_Droit_Profils =    liste_Droit_Profils() %#}
+    {#liste_Droit_Profils()#}
+    {#{{ dump(app.user, liste_Droit_Profils   ) }}#}
+    <ul>
+
+         
+            <li class="openable" id="menu_gestionrubriques">
+                <a href="#"><span class="icon li-pencil-ruler"></span>
+                    <span class="text">Gestion des rubriques</span></a>
+                <ul>
+                    <li class="openable" id="parametre_gestion_rubrique">
+                        <a href="#"><span class="icon li-pen"></span> <span class="text">Paramètres</span></a>
+                        <ul>
+
+                            <li id="diplome"><a href=" "
+                                                    class="no-icon"><span
+                                            class="text">Diplome</span></a></li>
+                                            
+                             <li id="diplome"><a href=" "
+                                                    class="no-icon"><span
+                                            class="text">Filiere</span></a></li>                
+
+                            <li id="direction"><a href="" class="no-icon"><span
+                                            class="text">Direction</span></a></li>
+                            <li id="departement"><a href="{{path('app_departement_index')}}"
+                                                    class="no-icon"><span
+                                            class="text">Département</span></a></li>
+                            
+                        </ul>
+                    </li>
+
+                    <li class="openable" id="gest_courrier">
+                        <a href="#"><span class="icon li-pencil"></span> <span class="text">Courriers</span></a>
+                        <ul>
+
+                        
+
+                                        <li id="courrier_arrive"><a
+                                                    href=""
+                                                    class="no-icon"><span
+                                                        class="text">Recherche de courriers arrivés</span></a></li>
+                                   
+
+                                        <li id="courrier_arrive"><a href=""
+                                                                    class="no-icon"><span
+                                                        class="text">Courriers Arrivés</span></a></li>
+                                  
+
+                                        <li id="affectation_preliminaire"><a
+                                                    href=""
+                                                    class="no-icon"><span
+                                                        class="text">Affectation Préliminaire</span></a>
+                                        </li>
+                                  
+
+                                        <li id="affectation_definitive"><a
+                                                    href=""
+                                                    class="no-icon"><span
+                                                        class="text">Affectation Définitive</span></a>
+                                        </li>
+
+                                
+                                        <li id="notification"><a href=""
+                                                                 class="no-icon"><span
+                                                        class="text"> Notification Fin Traitement</span></a></li>
+                                    
+
+                                        <li id="notification"><a href=""
+                                                                 class="no-icon"><span
+                                                        class="text">Confirmation Fin Traitement</span></a></li>
+                                   
+                                        <li id="courrier_depart"><a href=""
+                                                                    class="no-icon"><span
+                                                        class="text">Courriers Départs</span></a></li>
+                                    
+                                        <li id="acces_courrier"><a href=""
+                                                                   class="no-icon"><span
+                                                        class="text">Accès-Courrier</span></a></li>
+                                   
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+   
+
+ 
+            <li class="openable" id="menu_commandeChequier">
+                <a href="#"><span class="icon li-media"></span> <span class="text">Gestion des stagiaires</span></a>
+
+                <ul>
+                    
+
+                                <li id="commande_chequier"><a href=" "
+                                                              class="no-icon"><span
+                                                class="text">
+                            Enregister stagiaires</span></a>
+                                </li>
+                         
+
+                       
+                                <li id="listecommande_genere"><a href=""
+                                                                 class="no-icon"><span
+                                                class="text">
+                           Enregistrer convention de stage</span></a>
+                                </li>
+                          
+                </ul>
+            </li>
+    
+
+         
+            <li class="openable" id="menu_admin" name="menu_admin">
+                <a href="#"><span class="icon li-arrow-down-circle"></span> <span class="text">Administration</span></a>
+                <ul>
+                     
+
+                        <li id="liste_droit"><a href="" class="no-icon"><span class="text"> Droits Utilisateur</span></a>
+                        </li>
+                 
+
+
+                    
+
+                        <li id="liste_profil"><a href="" class="no-icon"><span
+                                        class="text"> Profils Utilisateur</span></a></li>
+                  
+
+
+                  
+                        <li id="liste_utilisateur"><a href="" class="no-icon"><span
+                                        class="text"> Utilisateurs</span></a></li>
+                  
+
+                 
+                    <li class="openable" id="id_chemindocument">
+                        <a href="" class="no-icon"><span
+                                    class="text">Chemin des documents</span></a>
+                       
+                </ul>
+            </li>
+         
+      
+
+       
+            <li class="openable" id="menu_Extraction">
+                <a href="#"><span class="icon li-3d-rotate"></span> <span class="text">Extractions</span></a>
+                <ul>
+                    <li class="openable" id="smenu_dcr">
+                        <a href="#" class="no-icon"><span class="text">DCR</span></a>
+                        <ul>
+                           
+
+                                        <li id="depotavue"><a
+                                                    href=""
+                                                    class="no-icon"><span
+                                                        class="text">Dépôts (A Vue, A Terme)</span></a>
+                                        </li>
+                                  
+
+                                        <li id="compte_solde_sup"><a
+                                                    href=""
+                                                    class="no-icon"><span
+                                                        class="text">Comptes clients Soldes >= à</span></a>
+                                        </li>
+                                   
+
+                                        
+                                   
+                                       
+
+                                   
+
+                                <li id="compte_nonactifs"><a href="#"
+                                                             class="no-icon"><span class="text">
+                        Comptes non actifs</span></a></li>
+
+
+
+
+
+                                <li id="compte_sansifu"><a
+                                            href="#"
+                                            class="no-icon"><span class="text">Comptes sans IFU</span></a>
+                                </li>
+
+                                <li id="compte_dormant"><a href="#"
+                                                           class="no-icon"><span class="text">
+                        Comptes dormants</span></a>
+                                <li id="compte_ph"><a href="#"
+                                                      class="no-icon"><span class="text">
+                        Comptes PP</span></a>
+                                <li id="compte_pm"><a href="#"
+                                                      class="no-icon"><span class="text">
+                        Comptes PM</span></a>
+                                </li>
+
+                            
+                        </ul>
+                    </li>
+
+
+                    <li class="openable" id="smenu_DFC">
+                        <a href="#" class="no-icon"><span class="text">DFC</span></a>
+                        <ul>
+                            
+                                <li id="journal"><a href="#"
+                                                    class="no-icon"><span
+                                                class="text">Journal</span></a>
+                                </li>
+                                <li id="grandlivre"><a href="#"
+                                                       class="no-icon"><span
+                                                class="text">Grand Livre</span></a>
+                                </li>
+                                
+
+                                        <li id="balance"><a
+                                                    href=" "
+                                                    class="no-icon"><span class="text">Balance</span></a>
+                                        </li>
+                                    
+
+                                        <li id="od"><a
+                                                    href=" "
+                                                    class="no-icon"><span
+                                                        class="text">Opérations Diverses (OD)</span></a>
+                                        </li>
+                                     
+                                        <li id="transferts"><a href=" "
+                                                               class="no-icon"><span class="text">
+                        Transferts Emis/Reçus</span></a></li>
+                                  
+                        </ul>
+                    </li>
+
+                    <li class="openable" id="smenu_DCAI">
+                        <a href="#" class="no-icon"><span class="text">DCAI</span></a>
+                        <ul>
+                            
+
+                               
+                                <li id="caisse_debit_credit_liste"><a href="#"
+                                                                      class="no-icon"><span
+                                                class="text">Mouvements créditeurs > à</span></a>
+                                </li>
+                                <li id="caisse_debit_credit_relever"><a
+                                            href="#"
+                                            class="no-icon"><span class="text">Comptes Dormants</span></a>
+                                </li>
+                        
+
+                        </ul>
+                    </li>
+
+                    <li class="openable" id="smenu_Eng">
+                        <a href="#" class="no-icon"><span class="text">DENG</span></a>
+                        <ul>
+                            <li id="caisse_debit_credit_new"><a href="#"
+                                                                class="no-icon"><span
+                                            class="text">Remboursements attendus</span></a>
+                            </li>
+                            <li id="caisse_debit_credit_new"><a href="#"
+                                                                class="no-icon"><span
+                                            class="text">Les cautions</span></a>
+                            </li>
+                            <li id="caisse_debit_credit_new"><a href="#"
+                                                                class="no-icon"><span
+                                            class="text">Les garanties</span></a>
+                            </li>
+                            <li id="caisse_debit_credit_new"><a href="#"
+                                                                class="no-icon"><span
+                                            class="text">Les impayés</span></a>
+                            </li>
+                            <li id="caisse_debit_credit_liste"><a href="#"
+                                                                  class="no-icon"><span
+                                            class="text">DAT Echus non traités</span></a>
+                            </li>
+                            <li id="caisse_debit_credit_relever"><a
+                                        href="#"
+                                        class="no-icon"><span class="text">DAT Echus traités</span></a>
+                            </li>
+                            <li id="caisse_debit_credit_relever"><a
+                                        href="#"
+                                        class="no-icon"><span class="text">Ruptures précoces</span></a>
+                            </li>
+                            <li id="decouvert_temp"><a
+                                        href="#"
+                                        class="no-icon"><span class="text">Découverts temporaires</span></a>
+                            </li>
+                            <li id="decouvert_temp"><a
+                                        href="#"
+                                        class="no-icon"><span class="text">Découverts ordinaires</span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="openable" id="smenu_Dop">
+                        <a href="#" class="no-icon"><span class="text">DOP</span></a>
+                        <ul>
+                            <li id="caisse_debit_credit_new"><a href="#"
+                                                                class="no-icon"><span
+                                            class="text">Cartes commandées</span></a>
+                            </li>
+                            <li id="caisse_debit_credit_new"><a href="#"
+                                                                class="no-icon"><span
+                                            class="text">Les virements en attente</span></a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </li>
+        
+    </ul>
+
+</nav>
+{#</div><!-- //END PAGE CONTAINER --><!-- PAGE CONTENT WRAPPER -->#}
+

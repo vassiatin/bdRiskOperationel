@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block pagetitle %}
+    <div class="page-heading__container">
+        <h1 class="title">Liste des stagiaires</h1>
+        <p class="caption">Voici la liste</p>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <a href="{{ path('app_categorie_new') }}">
+            <button  type="button" title="Nouveau"
+                     class="btn btn-outline-info" >Nouveau
+            </button>
+        </a>
+    </div>
+
+     <table id="dt-example-responsive"
+           class="dt-example-responsive table table-bordered table-striped " cellspacing="0"
+           width="100%">
+        <thead class="thead-dark">
+            <tr>
+              
+                <th>Libellecategorie</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie in categories %}
+            <tr>
+               
+                <td>{{ categorie.libellecategorie }}</td>
+                <td>
+                    
+                   <a href="{{ path('app_categorie_show', { 'id': categorie.id })}}">
+                        <button type="boutton" class="fa fa-reply-all" id="btn_detail"  title="Détail"> </button> </a>&nbsp;||
+
+                    <a href="{{ path('app_categorie_edit', { 'id': categorie.id })}}">
+                        <button type="boutton" class="fa fa-edit" id="btn_modifier"  title="Modifier"> </button> </a>&nbsp;||
+
+                    <a href="{{ path('app_categorie_show', { 'id': categorie.id })}}">
+                        <button type="boutton" class="fa fa-deaf" id="btn_supprimer"   title="Supprimer"  > </button> </a>
+                
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+  
+{% endblock %}

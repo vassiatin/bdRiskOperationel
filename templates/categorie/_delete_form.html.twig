@@ -1,0 +1,6 @@
+<form method="post" action="{{ path('app_categorie_delete', {'id': categorie.id}) }}" onsubmit="return confirm('Etes-vous sur de vouloir supprimer cette categorie?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ categorie.id) }}">
+      <div class="pull-right">
+    <button class="btn">supprimer une categorie</button>
+     </div>
+</form>

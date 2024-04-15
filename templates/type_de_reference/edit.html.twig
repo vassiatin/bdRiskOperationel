@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TypeDeReference{% endblock %}
+
+{% block body %}
+    <h1>Edit TypeDeReference</h1>
+
+    {{ include('type_de_reference/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_type_de_reference_index') }}">back to list</a>
+
+    {{ include('type_de_reference/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,198 @@
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+.login-bg {
+    background-image: url('../img/unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    height: 100vh;
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+}
+
+.login-img {
+    background: linear-gradient(to right, #1d4d9d, #990000);
+    height: 5px;
+    width: 100%;
+}
+
+.form-header {
+    border: solid 1px #e1e1e1;
+    border-top: solid 4px #1d4d9d;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.stats {
+    /*padding-top: 15px !important;*/
+    /*padding-left: 0px !important;*/
+    /*padding-right: 0px !important;*/
+}
+
+.login-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.login-text {
+    background: rgba(255, 255, 255, 1);
+    opacity: .4;
+}
+
+.buttons-colvis {
+    background-color: #1c7430 !important;
+    color: #f1f1f1 !important;
+}
+
+table {
+    font-size: 14px !important;
+}
+
+@media (min-width: 1281px) {
+    .titre-search {
+        width: 100% !important;
+    }
+
+    .titre-search-box {
+        width: 50% !important;
+    }
+
+    .passordre-select {
+        /*width: 1020px;*/
+    }
+
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .titre-search {
+        width: 100% !important;
+    }
+
+    .titre-search-box {
+        width: 50% !important;
+    }
+
+    .passordre-select {
+        width: 1000px;
+    }
+
+    .stats {
+        /*padding-top: 15px !important;*/
+        /*padding-left: 0px !important;*/
+        /*padding-right: 0px !important;*/
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .titre-search {
+        width: 70% !important;
+    }
+
+    .titre-search-box {
+        width: 30% !important;
+    }
+
+    .passordre-select {
+        width: 500px;
+    }
+
+    .stats {
+        padding-top: 15px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .titre-search {
+        width: 100% !important;
+    }
+
+    .titre-search-box {
+        width: 50% !important;
+    }
+
+    .passordre-select {
+        width: 100%;
+    }
+
+    .stats {
+        /*padding-top: 15px !important;*/
+        /*padding-left: 0px !important;*/
+        /*padding-right: 0px !important;*/
+    }
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .titre-search {
+        width: 25% !important;
+    }
+
+    .titre-search-box {
+        width: 10% !important;
+    }
+
+    .passordre-select {
+        width: 100%;
+    }
+
+    .stats {
+        padding-top: 15px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .titre-search {
+    }
+
+    .titre-search-box {
+    }
+
+    .passordre-select {
+        width: 100%;
+    }
+
+    .stats {
+        padding-top: 15px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}
+
+.navtab {
+    background-color: #1d4d9d;
+}

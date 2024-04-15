@@ -1,0 +1,6 @@
+<div class="text-center mb-2">
+<form method="post" action="{{ path('app_agent_delete', {'id': agent.id}) }}" onsubmit="return confirm('Êtes-vous sur de vouloir supprimer ce enregistrement?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ agent.id) }}">
+      <button class="btn btn-primary">Supprimer</button>
+</form>
+ </div>

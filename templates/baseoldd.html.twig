@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>{% block title %} PROJET OLA {% endblock %}</title>
+
+    <!-- META SECTION -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {#<link rel="shortcut icon" href="{{ asset("front/img/favicon.ico") }}" type="image/x-icon">#}
+    <link rel="icon" href="/img/icone.ico" type="image/x-icon">
+
+    <!-- END META SECTION --><!-- CSS INCLUDE -->
+    {% block steelsheet %}
+	    <link rel="stylesheet" href=".../css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/afbresponsive.css">
+        <link rel="stylesheet" href="/css/back.css">
+        <link rel="stylesheet" href="/css/multi-select.css">
+        {#        <link rel="stylesheet" href="/css/choosen-css.css') }}">#}
+        <link rel="stylesheet" href="/plugins/chosen/css/bootstrap-chosen.css">
+        <link rel="stylesheet" href="/css/intlTelInput.css">
+        {#Flat Picker#}
+        <link rel="stylesheet" href="/plugins/flatpickr/flatpickr.min.css">
+        {#<link rel="" href="{{ asset("front/img/loarder.gif") }}" type="image/gif">#}
+    {% endblock %}
+
+</head>
+
+
+<body class="indent indent--rounded indent--shadowed indent--single-header">
+<!-- PAGE WRAPPER -->
+
+
+<div class="page page--w-header page--w-container">
+    <!-- PAGE HEADER -->
+    {% include("shared/header.html.twig") %}
+
+    <!-- //END PAGE HEADER -->
+
+    <!-- PAGE CONTAINER -->
+    {#<div class="page page--w-header page--w-container" >#}
+    {#<!-- MENU du haut -->#}
+    {#{% block menu_haut %}#}
+    {#{% include("shared/menu_haut.html.twig") %}#}
+    {#{% endblock %}#}
+
+    {#</div><!-- //END PAGE CONTAINER --><!-- PAGE CONTENT WRAPPER -->#}
+
+    <!-- PAGE CONTAINER -->
+    <div class="page__container invert">
+
+        {#{% include "shared/menu_haut.html.twig" with {'liste_Droit_Profil' :  liste_Droit_Profils   }  %}#}
+        {% include "shared/menu_haut.html.twig" %}
+        <!-- MENU CONTEXTUEL -->
+        {% block menu_contextuel %}
+        {% endblock %}
+
+    </div><!-- //END PAGE CONTAINER --><!-- PAGE CONTENT WRAPPER -->
+
+
+    <!-- //END PAGE WRAPPER --><!-- TEMPLATE SETTINGS -->
+
+    <div class="page__content page-aside--hidden" id="page-content">
+
+        <!-- MENU PRINCIPAL -->
+        {#{% block menu_gauche %}#}
+        {% include("shared/menu.html.twig") %}
+        {#{% endblock %}#}
+
+        <!-- //END MENU PRINCIPAL -->
+
+
+        <!-- PAGE CONTENT CONTAINER -->
+        <div class="content" id="content"><!-- PAGE HEADING -->
+            {% for message in app.session.flashbag.get('error') %}
+                <div class="alert alert-danger alert-alt">
+                    <i class="fa fa-exclamation fa-fw"></i>
+                    <strong>{{ message|raw }}</strong>
+                </div>
+            {% endfor %}
+
+            {% for message  in app.session.flashbag.get('success') %}
+                <div class="alert alert-success alert-alt">
+                    <i class="fa fa-thumbs-up fa-fw"></i>
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+            {% for message in app.session.flashbag.get('warning') %}
+                <div class="alert alert-warning alert-alt">
+                    <i class="fa fa-thumbs-up fa-fw"></i>
+                    {{ message|raw }}
+                </div>
+            {% endfor %}
+            <div class="page-heading">
+                {% block pagetitle %}
+                    <div class="page-heading__container">
+                        <h1 class="title">Bienvenue sur </h1>
+                        <p class="caption">Votre logiciel </p>
+                    </div>
+                    {#<div class="page-heading__container float-right d-none d-sm-block">#}
+                        {#<a href="#" target="_blank"#}
+                           {#class="btn btn-primary btn--icon btn--icon-stacked btn--anon d-none d-lg-block"><span#}
+                                    {#class="text">$</span> ACTION</a>#}
+                    {#</div>#}
+                {% endblock %}
+
+            </div><!-- //END PAGE HEADING -->
+                <div class="container-fluid">
+                    <div class="row">
+                        {% block body %}
+
+
+                        {% endblock %}
+                    </div>
+
+                    <div class="row">
+                        {% block modals %}
+
+
+                        {% endblock %}
+                    </div>
+                </div>
+            </div><!-- //END PAGE CONTENT CONTAINER --></div><!-- //END PAGE CONTENT --></div>
+     </div>
+</div>
+    <!-- IMPORTANT SCRIPTS -->
+    {% block javascripts %}
+
+
+        {#<script type="text/javascript" href="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>#}
+        <script type="text/javascript" src="/js/vendors/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/vendors/jquery/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript"
+                src="/js/vendors/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        <!-- END IMPORTANT SCRIPTS --><!-- TEMPLATE SCRIPTS -->
+        <script type="text/javascript" src="/js/app.js"></script>
+        <script type="text/javascript" src="/js/plugins.js"></script>
+        <script type="text/javascript" src="/js/demo.js"></script>
+        <script type="text/javascript" src="/js/settings.js"></script>
+        <script type="text/javascript" src="/js/vendors/select2/select2.min.js"></script>
+        {# <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+ #}
+
+        <script type="text/javascript" src="/js/intlTelInput.min.js"></script>
+
+        {# <script type="text/javascript" src="/js/CommandeChequier/ajax_commande_chequier.js"></script> #}
+
+        {#<script type="text/javascript" src="{{ asset('front/js/vendors/daterangepicker/daterangepicker.js') }}"></script>#}
+        {#<script type="text/javascript" src="{{ asset('front/js/vendors/moment/moment.js') }}"></script>#}
+        {#<script type="text/javascript" src="{{ asset('front/js/vendors/datetimepicker/bootstrap-datetimepicker.js') }}"></script>#}
+
+        <script type="text/javascript" src="/js/vendors/moment/moment-with-locales.min.js"></script>
+        <script type="text/javascript" src="/js/vendors/datetimepicker/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="/js/vendors/daterangepicker/daterangepicker.js"></script>
+
+        {#FlatPickr#}
+        <script type="text/javascript" src="/plugins/flatpickr/flatpickr.min.js"></script>
+        {#<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.2/l10n/fr.js"></script>#}
+
+        <script src="/js/chosen.jquery.min.js"></script>
+        {#Plugin pour chosen select bootstrap#}
+        <script type="text/javascript" src="/plugins/chosen/js/chosen.jquery.min.js"></script>
+        <script type="text/javascript" src="/plugins/chosen/js/init.js"></script>
+        <script type="text/javascript">
+            $(".chooserSelect").chosen();
+            // $(".chooserSelec").chosen();
+        </script>
+
+       {#  <script>
+            $('form').submit(function ()
+            {
+                $('button:submit').attr('disabled', 'disabled');
+                $('input:submit').attr('disabled', 'disabled');
+            });
+        </script> #}
+        <!-- END TEMPLATE SCRIPTS -->
+
+        {#Flatpickr date#}
+        <script>
+            $('.dateFlatpickr').flatpickr({
+                defaultDate: "today",
+                maxDate: "today",
+                // minDate: "today",
+                dateFormat: "d-m-Y"
+
+            });
+
+        </script>
+
+        {#Plugin pour le separateur de millier#}
+        <script type="text/javascript" src="/plugins/Number-Input-Formatting-Mask-Number/jquery.masknumber.js"></script>
+        <script>
+            //Séparateur de millier
+            $('.millier').maskNumber({
+                integer: true,
+                thousands: ' '
+            });
+
+            $('.pourcentage').maskNumber({
+                decimal: '.',
+                thousands: ' '
+            });
+        </script>
+
+        
+        {#TODO : trouver l'emplacement adequat pour cette ligne de code#}
+    {% endblock %}
+
+</body>
+
+
+</html>

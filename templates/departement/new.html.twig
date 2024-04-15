@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block titlepage  %} 
+                              <p class="mb-0">Ajouter un nouveau departement</p> 
+                              {% endblock  %}
+
+
+                              {% block breadcrumb  %}
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="javascript:void(0)">Parametre</a></li>
+                                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Departement</a></li>
+                                    </ol>
+                              {% endblock  %}
+
+{% block body %}
+  <div class="form-group col-sm-6">
+        <div><h2 class="card-title"><strong>Création d'un nouveau département</strong></h2></div>
+ <div><a href="{{ path('app_departement_index') }} " class="fa fa-arrow-left">Retour</a></div>
+    </div>
+    <br>
+<div class="card">
+    {{ include('departement/_form.html.twig') }}
+
+  </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Categorie{% endblock %}
+
+{% block body %}
+ <div class="form-group col-sm-6">
+    <div><h2 class="card-title"><strong>Modifier categorie</strong></h2></div>
+     <div><a href="{{ path('app_categorie_index') }} " class="fa fa-arrow-left">Retour liste</a></div>
+    </div>
+    <br>
+<div class="container-fluid">
+    {{ include('categorie/_form.html.twig', {'button_label': 'Update'}) }}
+
+  <div class="pull-right">    
+
+    {{ include('categorie/_delete_form.html.twig') }}
+      </div>
+
+</div> 
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle  Categorie{% endblock %}
+
+{% block body %}
+    <div class="form-group col-sm-6">
+        <div><h2 class="card-title"><strong>Création Categorie</strong></h2></div>
+        <div><a href="{{ path('app_categorie_index') }} " class="fa fa-arrow-left">Retour</a></div>
+    </div>
+    <br>
+<div class="container-fluid">
+
+    {{ include('categorie/_form.html.twig') }}
+
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

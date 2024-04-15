@@ -1,0 +1,23 @@
+ <script type="text/javascript">
+        $(".flatpickr").flatpickr(
+                {
+                    mode: "range",
+                    locale: "fr",
+                    dateFormat: "d-m-Y",
+                    disable: [
+                        function (date) {
+                            return !(date.getDate());
+                        }
+                    ]
+                }
+        );
+    </script>
+
+
+$('#dateOperation').flatpickr({
+            defaultDate: "today",
+            maxDate: "today",
+            // minDate: "today",
+            dateFormat: "d-m-Y"
+
+        });

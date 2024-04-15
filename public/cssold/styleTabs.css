@@ -1,0 +1,148 @@
+
+nav > .nav.nav-tabs {
+
+    border: none;
+    color: #fff;
+    background: #272e38;
+    border-radius: 0;
+
+}
+
+nav > div a.nav-item.nav-link {
+    border: none;
+    padding: 30px 50px;
+    margin: 0;
+    color: #fff;
+    /*background: #369671;*/
+    background: #4c5471;
+    /*background: #272e38;*/
+    border-radius: 0;
+}
+
+nav > div a.nav-item.nav-link.active {
+
+    border: none;
+    padding: 30px 50px;
+    margin: 0;
+    color: #fff;
+    /*background: #236c50;*/
+    background: #4c5471;
+    border-radius: 0;
+
+}
+
+nav > div a.nav-item.nav-link.active:after {
+    content: "";
+    position: relative;
+    bottom: -60px;
+    left: -10%;
+    border: 15px solid transparent;
+    /*border-top-color: #236c50;*/
+    border-top-color: #4c5471;
+}
+
+.tab-content {
+    background: #fdfdfd;
+    line-height: 25px;
+    border: none;
+    /*border: 1px solid #ddd;*/
+    /*border-top: 1px solid black;*/
+    /*border-bottom: 1px solid black;*/
+    padding: 30px 25px;
+}
+
+nav > div a.nav-item.nav-link:hover {
+
+    border: none;
+    /*background: #2d8764;*/
+    background: #4c5471;
+    color: #fff;
+    border-radius: 0;
+    transition: background 0.20s linear;
+
+}
+
+nav > div a.nav-item.nav-link.active:hover {
+    border: none;
+    /*background: #236c50;*/
+    background: #4c5471;
+    color: #fff;
+    border-radius: 0;
+    transition: background 0.20s linear;
+
+}
+
+nav > div a.nav-item.nav-link:focus {
+    border: none;
+    /*background: #236c50;*/
+    background: #4c5471;
+    color: #fff;
+    border-radius: 0;
+    transition: background 0.20s linear;
+}
+
+
+
+/******************************************** Blob loader style****************************************************/
+
+.centered {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*background: #000;*/
+    background: silver;
+    /*filter: blur(10px) contrast(20);*/
+}
+
+.blob-1, .blob-2 {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    /*background: #19E649;*/
+    background: #4c5471;
+    /*background: red;*/
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.blob-1 {
+    left: 20%;
+    animation: osc-l 2.5s ease infinite;
+}
+
+.blob-2 {
+    left: 80%;
+    animation: osc-r 2.5s ease infinite;
+    /*background: #0ff;*/
+    /*background: #236C50;*/
+    background: #4c5471;
+}
+
+@keyframes osc-l {
+    0% {
+        left: 20%;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 20%;
+    }
+}
+
+@keyframes osc-r {
+    0% {
+        left: 80%;
+    }
+    50% {
+        left: 50%;
+    }
+    100% {
+        left: 80%;
+    }
+}
